@@ -147,11 +147,15 @@ p.lead {
     padding-bottom: 18px;
 }
 
+/* Logo: Orange branding with white background handling */
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
+    padding: 8px 12px;
+    background: var(--white);
+    border-radius: 4px;
 }
 
 .logo-img {
@@ -160,6 +164,8 @@ p.lead {
     width: auto;
     max-width: 160px;
     object-fit: contain;
+    background: var(--white);
+    border-radius: 2px;
 }
 
 .logo-text {
