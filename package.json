@@ -1,0 +1,24 @@
+{
+  "name": "shehadeh-lawoffice-website",
+  "version": "1.0.0",
+  "description": "Refonte complète du site web Shehadeh Law Office - Cabinet d'avocat professionnel",
+  "main": "src/index.js",
+  "scripts": {
+    "scrape": "node scripts/scraper.js",
+    "dev": "http-server src -p 8000 -c-1",
+    "build": "echo 'Static site - no build required'",
+    "start": "http-server src -p 8000"
+  },
+  "keywords": [
+    "law-office",
+    "website",
+    "responsive",
+    "seo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "http-server": "^14.1.1"
+  }
+}
