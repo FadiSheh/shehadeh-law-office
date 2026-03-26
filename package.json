@@ -1,8 +1,7 @@
 {
   "name": "shehadeh-lawoffice-website",
   "version": "1.0.0",
-  "description": "Refonte complète du site web Shehadeh Law Office - Cabinet d'avocat professionnel",
-  "main": "src/index.js",
+  "description": "Static website for Shehadeh Law Office, a professional law firm based in Beit Jala, Palestine.",
   "scripts": {
     "scrape": "node scripts/scraper.js",
     "dev": "http-server src -p 8000 -c-1",
@@ -11,12 +10,18 @@
   },
   "keywords": [
     "law-office",
+    "legal-service",
     "website",
+    "static-site",
     "responsive",
     "seo"
   ],
-  "author": "",
+  "author": "Fadi Shehadeh",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:FadiSheh/shehadeh-law-office.git"
+  },
   "devDependencies": {
     "@playwright/test": "^1.40.0",
     "http-server": "^14.1.1"

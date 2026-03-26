@@ -1,0 +1,23 @@
+# Robots.txt for Shehadeh Law Office
+# Configuration for search engine crawlers
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /*.json$
+Disallow: /*.pdf$
+
+# Specific rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://fadisheh.github.io/shehadeh-law-office/sitemap.xml

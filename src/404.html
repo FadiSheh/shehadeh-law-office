@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Page Not Found — Shehadeh Law Office</title>
+    <style>
+        :root {
+            --navy: #0a1628;
+            --navy-mid: #1a2e50;
+            --gold: #b8963e;
+            --off-white: #f7f6f3;
+            --text: #182433;
+            --muted: #5a5a5a;
+            --border: #ddd8cf;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top right, rgba(184, 150, 62, 0.12), transparent 32%),
+                linear-gradient(180deg, #fbfaf7 0%, var(--off-white) 100%);
+            display: grid;
+            place-items: center;
+            padding: 24px;
+        }
+
+        .card {
+            width: min(720px, 100%);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--gold);
+            padding: 40px;
+            box-shadow: 0 24px 60px rgba(10, 22, 40, 0.08);
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            font: 600 0.78rem/1.2 Arial, sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.05;
+            color: var(--navy);
+        }
+
+        p {
+            margin: 0 0 16px;
+            font: 400 1rem/1.8 Arial, sans-serif;
+            color: var(--muted);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            text-decoration: none;
+            font: 600 0.82rem/1 Arial, sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid var(--navy);
+            color: var(--navy);
+            background: transparent;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        .links {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font: 500 0.92rem/1.4 Arial, sans-serif;
+        }
+
+        .links a {
+            color: var(--navy-mid);
+            text-decoration: none;
+        }
+
+        .links a:hover { color: var(--gold); }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <p class="eyebrow">Shehadeh Law Office</p>
+        <h1>Page Not Found</h1>
+        <p>The page you requested could not be found. The website may have been updated, or the link you followed may be incomplete.</p>
+        <p>You can return to the homepage or continue directly to one of the main sections below.</p>
+
+        <div class="actions">
+            <a class="btn btn-primary" href="./index.html">Back to Home</a>
+            <a class="btn" href="./pages/contact.html">Contact the Firm</a>
+        </div>
+
+        <div class="links">
+            <a href="./pages/about.html">About</a>
+            <a href="./pages/services.html">Practice Areas</a>
+            <a href="./pages/team.html">Our Team</a>
+            <a href="./privacy-policy.html">Privacy Policy</a>
+            <a href="./legal-notice.html">Legal Notice</a>
+        </div>
+    </main>
+</body>
+</html>
