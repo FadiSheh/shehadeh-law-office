@@ -7,8 +7,20 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://fadisheh.github.io/shehadeh-law-office/index-ar.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
         <loc>https://fadisheh.github.io/shehadeh-law-office/pages/about.html</loc>
         <lastmod>2026-03-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://fadisheh.github.io/shehadeh-law-office/pages/about-ar.html</loc>
+        <lastmod>2026-03-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -19,8 +31,20 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://fadisheh.github.io/shehadeh-law-office/pages/services-ar.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://fadisheh.github.io/shehadeh-law-office/pages/team.html</loc>
         <lastmod>2026-03-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fadisheh.github.io/shehadeh-law-office/pages/team-ar.html</loc>
+        <lastmod>2026-03-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -31,15 +55,33 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://fadisheh.github.io/shehadeh-law-office/pages/contact-ar.html</loc>
+        <lastmod>2026-03-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://fadisheh.github.io/shehadeh-law-office/legal-notice.html</loc>
         <lastmod>2026-03-25</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
+        <url>
+            <loc>https://fadisheh.github.io/shehadeh-law-office/legal-notice-ar.html</loc>
+            <lastmod>2026-03-26</lastmod>
+            <changefreq>yearly</changefreq>
+            <priority>0.5</priority>
+        </url>
     <url>
         <loc>https://fadisheh.github.io/shehadeh-law-office/privacy-policy.html</loc>
         <lastmod>2026-03-25</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
+        <url>
+            <loc>https://fadisheh.github.io/shehadeh-law-office/privacy-policy-ar.html</loc>
+            <lastmod>2026-03-26</lastmod>
+            <changefreq>yearly</changefreq>
+            <priority>0.5</priority>
+        </url>
 </urlset>

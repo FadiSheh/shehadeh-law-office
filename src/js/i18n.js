@@ -25,11 +25,15 @@ const i18n = {
 };
 
 function getCurrentLanguage() {
+    const htmlLang = document.documentElement.lang || '';
+    if (htmlLang) {
+        return htmlLang.startsWith('ar') ? 'ar' : 'en';
+    }
+
     const stored = localStorage.getItem('language');
-    if (stored) return stored;
-    
-    const htmlLang = document.documentElement.lang || 'en';
-    return htmlLang.startsWith('ar') ? 'ar' : 'en';
+    if (stored === 'ar' || stored === 'en') return stored;
+
+    return 'en';
 }
 
 function setLanguage(lang) {

@@ -51,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
 
+    const messages = getContactFormMessages();
+
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
@@ -65,23 +67,23 @@ document.addEventListener('DOMContentLoaded', function () {
         // Basic validation
         let valid = true;
 
-        if (!firstName.trim()) { showFieldError('firstNameError', 'First name is required.'); valid = false; }
+        if (!firstName.trim()) { showFieldError('firstNameError', messages.firstNameRequired); valid = false; }
         else clearFieldError('firstNameError');
 
-        if (!lastName.trim()) { showFieldError('lastNameError', 'Last name is required.'); valid = false; }
+        if (!lastName.trim()) { showFieldError('lastNameError', messages.lastNameRequired); valid = false; }
         else clearFieldError('lastNameError');
 
-        if (!email.trim() || !isValidEmail(email)) { showFieldError('emailError', 'Please enter a valid email address.'); valid = false; }
+        if (!email.trim() || !isValidEmail(email)) { showFieldError('emailError', messages.emailInvalid); valid = false; }
         else clearFieldError('emailError');
 
-        if (!subject) { showFieldError('subjectError', 'Please select a subject.'); valid = false; }
+        if (!subject) { showFieldError('subjectError', messages.subjectRequired); valid = false; }
         else clearFieldError('subjectError');
 
-        if (!message.trim()) { showFieldError('messageError', 'Please enter your message.'); valid = false; }
+        if (!message.trim()) { showFieldError('messageError', messages.messageRequired); valid = false; }
         else clearFieldError('messageError');
 
         if (consent && !consent.checked) {
-            showFormStatus('Please acknowledge the privacy notice to proceed.', 'error');
+            showFormStatus(messages.privacyConsentRequired, 'error');
             valid = false;
         }
 
@@ -95,17 +97,17 @@ document.addEventListener('DOMContentLoaded', function () {
             message: message.trim(),
         };
 
-        sendMessage(formData);
+        sendMessage(formData, messages);
     });
 });
 
-function sendMessage(formData) {
+function sendMessage(formData, messages) {
     const submitBtn = document.getElementById('submitBtn');
-    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = messages.sending; }
 
     if (typeof emailjs === 'undefined') {
-        showFormStatus('Message could not be sent. Please contact us by phone or email directly.', 'error');
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+        showFormStatus(messages.unavailable, 'error');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = messages.send; }
         return;
     }
 
@@ -118,14 +120,46 @@ function sendMessage(formData) {
         to_email:   'sami@shehadehlawoffice.com',
     })
     .then(function () {
-        showFormStatus('Your message has been sent. We will respond as soon as possible.', 'success');
+        showFormStatus(messages.success, 'success');
         document.getElementById('contactForm').reset();
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = messages.send; }
     }, function (error) {
         console.error('EmailJS error:', error);
-        showFormStatus('An error occurred. Please try contacting us directly at +970-2-274 3543.', 'error');
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+        showFormStatus(messages.failure, 'error');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = messages.send; }
     });
+}
+
+function getContactFormMessages() {
+    if ((document.documentElement.lang || '').startsWith('ar')) {
+        return {
+            firstNameRequired: 'الاسم الأول مطلوب.',
+            lastNameRequired: 'اسم العائلة مطلوب.',
+            emailInvalid: 'يرجى إدخال بريد إلكتروني صحيح.',
+            subjectRequired: 'يرجى اختيار الموضوع.',
+            messageRequired: 'يرجى إدخال الرسالة.',
+            privacyConsentRequired: 'يرجى الموافقة على إشعار الخصوصية للمتابعة.',
+            send: 'إرسال الرسالة',
+            sending: 'جارٍ الإرسال...',
+            unavailable: 'تعذر إرسال الرسالة حاليا. يرجى التواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني.',
+            success: 'تم إرسال رسالتكم بنجاح. سنتواصل معكم في أقرب وقت ممكن.',
+            failure: 'حدث خطأ أثناء الإرسال. يرجى التواصل معنا مباشرة على الرقم +970-2-274 3543.'
+        };
+    }
+
+    return {
+        firstNameRequired: 'First name is required.',
+        lastNameRequired: 'Last name is required.',
+        emailInvalid: 'Please enter a valid email address.',
+        subjectRequired: 'Please select a subject.',
+        messageRequired: 'Please enter your message.',
+        privacyConsentRequired: 'Please acknowledge the privacy notice to proceed.',
+        send: 'Send Message',
+        sending: 'Sending…',
+        unavailable: 'Message could not be sent. Please contact us by phone or email directly.',
+        success: 'Your message has been sent. We will respond as soon as possible.',
+        failure: 'An error occurred. Please try contacting us directly at +970-2-274 3543.'
+    };
 }
 
 function showFieldError(id, msg) {

@@ -19,6 +19,13 @@
     .contact-sidebar   { max-width: 440px; }
     .team-grid         { grid-template-columns: repeat(2, 1fr); }
     .cta-band .container { flex-direction: column; align-items: flex-start; }
+
+    body.rtl .cta-band .container { align-items: flex-end; }
+    body.rtl .approach-step:nth-child(2),
+    body.rtl .approach-step:nth-child(4) {
+        border-left: none;
+        border-right: 1px solid var(--border);
+    }
 }
 
 /* MOBILE */
@@ -62,6 +69,21 @@
     .nav-link::after { left: 0; right: auto; width: 30px; bottom: 2px; }
     .nav-link.active { color: var(--white); }
 
+    body.rtl .nav-menu {
+        left: auto;
+        right: -100%;
+        align-items: flex-end;
+        text-align: right;
+        box-shadow: -4px 0 24px rgba(0,0,0,0.3);
+    }
+
+    body.rtl .nav-menu.open { right: 0; }
+
+    body.rtl .nav-link::after {
+        left: auto;
+        right: 0;
+    }
+
     .hero { min-height: 340px; }
     .hero-title { font-size: 1.8rem; }
     .hero-subtitle { font-size: 0.9rem; }
@@ -94,11 +116,16 @@
     .footer { padding: 40px 0 0; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
 
+    body.rtl .cta-band .container,
+    body.rtl .footer-bottom { align-items: flex-end; }
+
     .values-table { display: block; }
     .values-table tbody { display: block; }
     .values-table tr { display: block; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px; }
     .values-table td { display: block; padding: 4px 0; width: 100%; }
     .values-table td:first-child { font-size: 0.9rem; margin-bottom: 2px; padding-right: 0; }
+
+    body.rtl .values-table td:first-child { padding-left: 0; }
 }
 
 @media (max-width: 480px) {
@@ -146,50 +173,4 @@
 
 /* Dark mode toggle removed */
 
-/* ============================================================
-   RTL SUPPORT (Arabic)
-   ============================================================ */
-
-body.rtl {
-    font-family: 'Cairo', var(--font-sans);
-    direction: rtl;
-}
-
-body.rtl .logo {
-    flex-direction: row-reverse;
-}
-
-body.rtl .topbar .container {
-    justify-content: flex-start;
-    flex-direction: row-reverse;
-}
-
-body.rtl .nav-menu {
-    gap: 8px;
-}
-
-body.rtl .about-strip,
-body.rtl .contact-layout {
-    direction: rtl;
-}
-
-body.rtl .form-row {
-    direction: rtl;
-}
-
-body.rtl .nav-menu {
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-@media (max-width: 768px) {
-    body.rtl .nav-menu {
-        left: -100%;
-        right: auto;
-        position: fixed;
-    }
-    body.rtl .nav-menu.open {
-        left: auto;
-        right: 0;
-    }
-}
+/* RTL rules live in styles.css; responsive overrides are kept above. */

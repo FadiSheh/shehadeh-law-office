@@ -1071,6 +1071,133 @@ p.lead {
 }
 
 /* ============================================================
+   RTL SUPPORT
+   ============================================================ */
+
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+body.rtl .topbar .container,
+body.rtl .navbar .container,
+body.rtl .hero-actions,
+body.rtl .cta-band .container,
+body.rtl .footer-bottom {
+    flex-direction: row-reverse;
+}
+
+body.rtl .topbar .container {
+    justify-content: flex-start;
+}
+
+body.rtl .logo {
+    flex-direction: row-reverse;
+}
+
+body.rtl .logo-text,
+body.rtl .section-header,
+body.rtl .hero-content,
+body.rtl .about-strip-left,
+body.rtl .about-strip-right,
+body.rtl .practice-card,
+body.rtl .cta-band,
+body.rtl .footer-col,
+body.rtl .footer-bottom,
+body.rtl .prose,
+body.rtl .aside-box,
+body.rtl .contact-aside,
+body.rtl .contact-form,
+body.rtl .member-info,
+body.rtl .page-header {
+    text-align: right;
+}
+
+body.rtl .nav-menu {
+    flex-direction: row-reverse;
+}
+
+body.rtl .nav-link::after {
+    left: 14px;
+    right: 14px;
+}
+
+body.rtl .about-strip,
+body.rtl .about-body,
+body.rtl .contact-layout,
+body.rtl .footer-grid {
+    direction: rtl;
+}
+
+body.rtl .pillar-list li {
+    grid-template-columns: 1fr auto;
+}
+
+body.rtl .pillar-num {
+    text-align: left;
+}
+
+body.rtl .prose ul {
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+body.rtl .values-table td:first-child {
+    padding-right: 0;
+    padding-left: 24px;
+}
+
+body.rtl .service-entry {
+    direction: rtl;
+}
+
+body.rtl .service-entry-body ul li {
+    padding-left: 0;
+    padding-right: 14px;
+}
+
+body.rtl .service-entry-body ul li::before {
+    left: auto;
+    right: 0;
+}
+
+body.rtl .approach-step {
+    border-right: none;
+    border-left: 1px solid var(--border);
+}
+
+body.rtl .approach-step:last-child {
+    border-left: none;
+}
+
+body.rtl .form-row {
+    direction: rtl;
+}
+
+body.rtl .form-check {
+    flex-direction: row-reverse;
+}
+
+body.rtl .hours-table td:last-child {
+    text-align: left;
+}
+
+body.rtl .form-status.success,
+body.rtl .form-status.error {
+    border-left: none;
+    border-right-width: 3px;
+    border-right-style: solid;
+}
+
+body.rtl .form-status.success {
+    border-right-color: #3d8b3d;
+}
+
+body.rtl .form-status.error {
+    border-right-color: #c94040;
+}
+
+/* ============================================================
    SUPPLEMENTARY — MISSING CLASSES
    ============================================================ */
 
