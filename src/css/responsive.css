@@ -124,3 +124,91 @@
     .hero-title { color: #000 !important; }
     .section { padding: 24px 0; }
 }
+
+/* ============================================================
+   SCROLL ANIMATIONS
+   ============================================================ */
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-animate.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   DARK MODE SWITCHER
+   ============================================================ */
+
+#darkModeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: color var(--transition);
+    margin-left: 12px;
+}
+
+#darkModeToggle:hover {
+    color: var(--gold);
+}
+
+#darkModeToggle:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ============================================================
+   RTL SUPPORT (Arabic)
+   ============================================================ */
+
+body.rtl {
+    font-family: 'Cairo', var(--font-sans);
+    direction: rtl;
+}
+
+body.rtl .logo {
+    flex-direction: row-reverse;
+}
+
+body.rtl .topbar .container {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
+
+body.rtl .nav-menu {
+    gap: 8px;
+}
+
+body.rtl .about-strip,
+body.rtl .contact-layout {
+    direction: rtl;
+}
+
+body.rtl .form-row {
+    direction: rtl;
+}
+
+body.rtl .nav-menu {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+    body.rtl .nav-menu {
+        left: -100%;
+        right: auto;
+        position: fixed;
+    }
+    body.rtl .nav-menu.open {
+        left: auto;
+        right: 0;
+    }
+}

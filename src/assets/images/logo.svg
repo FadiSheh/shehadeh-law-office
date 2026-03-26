@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style>
+      .logo-text { font-family: Georgia, serif; font-size: 24px; font-weight: bold; fill: #0a1628; }
+      .logo-accent { fill: #b8963e; }
+    </style>
+  </defs>
+  
+  <!-- Decorative accent bar -->
+  <rect x="0" y="0" width="8" height="80" class="logo-accent"/>
+  
+  <!-- Logo text -->
+  <text x="20" y="35" class="logo-text">SLO</text>
+  
+  <!-- Subtitle -->
+  <text x="20" y="58" style="font-family: Arial, sans-serif; font-size: 8px; fill: #b8963e; letter-spacing: 1px; font-weight: 600;">LEGAL COUNSEL</text>
+</svg>

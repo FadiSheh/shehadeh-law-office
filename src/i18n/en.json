@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "practiceAreas": "Practice Areas",
+    "ourTeam": "Our Team",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Shehadeh Law Office",
+    "title": "Achieving Success for Our Clients is Our Mission",
+    "subtitle": "We provide personal, dependable legal counsel built on sincerity, trust, and an unwavering commitment to client service. When you engage Shehadeh Law Office, you engage a partner."
+  },
+  "cta": {
+    "consultation": "Request a Consultation",
+    "practiceAreas": "Practice Areas"
+  },
+  "footer": {
+    "copyright": "© 2026 Shehadeh Law Office. All rights reserved.",
+    "location": "Beit Jala, Palestine"
+  }
+}
