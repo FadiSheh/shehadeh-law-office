@@ -87,8 +87,15 @@ python3 -m http.server 8000
 
 - `npm start`: serves the static site from `src/`
 - `npm run dev`: serves the static site with disabled caching
+- `npm test`: runs the local Playwright suite on Chromium and Mobile Chrome
+- `npm run test:all`: runs the full Playwright matrix, including Firefox and WebKit
 - `npm run scrape`: runs the Playwright scraper
 - `npm run build`: placeholder only; there is no build pipeline
+
+Playwright note:
+
+- local runs default to Chromium-based projects so missing Firefox/WebKit binaries do not create false failures
+- full cross-browser coverage still runs in CI and can be triggered locally with `npm run test:all`
 
 ## Content and Branding
 

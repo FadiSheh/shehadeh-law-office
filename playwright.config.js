@@ -1,5 +1,33 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const fullCrossBrowser = !!process.env.CI || process.env.PW_FULL_CROSS_BROWSER === '1';
+
+const defaultProjects = [
+  {
+    name: 'chromium',
+    use: { ...devices['Desktop Chrome'] },
+  },
+  {
+    name: 'Mobile Chrome',
+    use: { ...devices['Pixel 5'] },
+  },
+];
+
+const extendedProjects = [
+  {
+    name: 'firefox',
+    use: { ...devices['Desktop Firefox'] },
+  },
+  {
+    name: 'webkit',
+    use: { ...devices['Desktop Safari'] },
+  },
+  {
+    name: 'Mobile Safari',
+    use: { ...devices['iPhone 12'] },
+  },
+];
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
@@ -12,28 +40,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-    },
-  ],
+  projects: fullCrossBrowser ? [...defaultProjects, ...extendedProjects] : defaultProjects,
 
   webServer: {
     command: 'npm start',

@@ -8,6 +8,7 @@
     "build": "echo 'Static site - no build required'",
     "start": "http-server src -p 8000",
     "test": "playwright test",
+    "test:all": "PW_FULL_CROSS_BROWSER=1 playwright test",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug"
   },
