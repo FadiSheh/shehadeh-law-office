@@ -144,26 +144,7 @@
    DARK MODE SWITCHER
    ============================================================ */
 
-#darkModeToggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px 12px;
-    color: var(--text-muted);
-    font-size: 1.2rem;
-    transition: color var(--transition);
-    margin-left: 12px;
-}
-
-#darkModeToggle:hover {
-    color: var(--gold);
-}
-
-#darkModeToggle:focus {
-    outline: 2px solid var(--gold);
-    outline-offset: 2px;
-    border-radius: 2px;
-}
+/* Dark mode toggle removed */
 
 /* ============================================================
    RTL SUPPORT (Arabic)
